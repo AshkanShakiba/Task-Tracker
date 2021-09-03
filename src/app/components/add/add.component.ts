@@ -16,4 +16,7 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submit():void {
+
+  }
 }

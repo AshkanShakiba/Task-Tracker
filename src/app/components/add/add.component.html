@@ -1,4 +1,5 @@
-<form class="add-form">
+<!--suppress AngularUndefinedBinding -->
+<form class="add-form" (ngSubmit)="submit()">
   <div class="form-control">
     <input type="text" name="task" id="task" [(ngModel)]="task" placeholder="Your Task...">
     <input type="text" name="day" id="day" [(ngModel)]="day" placeholder="Your Task's Day & Time...">
