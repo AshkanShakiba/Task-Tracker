@@ -1,6 +1,13 @@
-<form>
+<form class="add-form">
   <div class="form-control">
-    <input type="text" name="task" id="task" placeholder="Your Task...">
-    <input type="text" name="day" id="day" placeholder="Your Task's Day & Time...">
+    <input type="text" name="task" id="task" [(ngModel)]="task" placeholder="Your Task...">
+    <input type="text" name="day" id="day" [(ngModel)]="day" placeholder="Your Task's Day & Time...">
+  </div>
+  <div class="form-control form-control-check">
+    <label for="reminder">Remind Me!</label>
+    <input type="checkbox" name="reminder" id="reminder" [(ngModel)]="reminder">
+  </div>
+  <div class="form-control">
+    <input type="submit" class="btn btn-block" value="Add Task">
   </div>
 </form>
