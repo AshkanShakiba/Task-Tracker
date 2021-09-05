@@ -1,5 +1,6 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Task} from "../../Task";
+import {UIService} from "../../services/ui.service";
 
 @Component({
   selector: 'app-add',
@@ -10,9 +11,12 @@ export class AddComponent implements OnInit {
   text: string = "";
   day: string = "";
   reminder: boolean = false;
-  @Output() onSubmit:EventEmitter<Task>=new EventEmitter();
+  @Output() onSubmit: EventEmitter<Task> = new EventEmitter();
 
-  constructor() {
+  uiService: UIService;
+
+  constructor(uiService: UIService) {
+    this.uiService = uiService;
   }
 
   ngOnInit(): void {
@@ -32,8 +36,12 @@ export class AddComponent implements OnInit {
 
     this.onSubmit.emit(task);
 
-    this.text="";
-    this.day="";
-    this.reminder=false;
+    this.text = "";
+    this.day = "";
+    this.reminder = false;
+  }
+
+  getShowAdd(): boolean {
+    return this.uiService.getShowAdd();
   }
 }

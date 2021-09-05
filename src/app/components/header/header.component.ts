@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-// import {Subscription} from "rxjs";
 import {UIService} from "../../services/ui.service";
 
 @Component({
@@ -9,12 +8,10 @@ import {UIService} from "../../services/ui.service";
 })
 export class HeaderComponent implements OnInit {
   @Input() title: string = "";
-  // subscription: Subscription;
   uiService: UIService;
 
   constructor(uiService: UIService) {
     this.uiService = uiService;
-    // this.subscription=this.uiService.toggle().subscribe();
   }
 
   ngOnInit(): void {
