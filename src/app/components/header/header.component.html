@@ -1,4 +1,4 @@
 <header>
   <h1>{{title}}</h1>
-  <app-button text="Add" color="green" (btnClick)="toggleAddTask()"></app-button>
+  <app-button text="{{getShowAdd() ? 'Close' : 'Add'}}" color="{{getShowAdd() ? 'red' : 'green'}}" (btnClick)="toggleAddTask()"></app-button>
 </header>
