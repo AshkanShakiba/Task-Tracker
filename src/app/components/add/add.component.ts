@@ -39,6 +39,7 @@ export class AddComponent implements OnInit {
     this.text = "";
     this.day = "";
     this.reminder = false;
+    this.uiService.toggleSubject();
   }
 
   getShowAdd(): boolean {

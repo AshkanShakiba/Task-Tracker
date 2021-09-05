@@ -1,5 +1,5 @@
 <!--suppress AngularUndefinedBinding -->
-<form class="add-form" (ngSubmit)="submit()" [ngStyle]="{'display': getShowAdd() ? 'block' : 'none'}">
+<form class="add-form" (ngSubmit)="submit()" *ngIf="getShowAdd()">
   <div class="form-control">
     <input type="text" name="text" id="text" [(ngModel)]="text" placeholder="Your Task...">
     <input type="text" name="day" id="day" [(ngModel)]="day" placeholder="Your Task's Day & Time...">
