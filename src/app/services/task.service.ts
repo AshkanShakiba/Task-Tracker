@@ -4,8 +4,8 @@ import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AppModule} from "../app.module";
 
-let httpOptions={
-  headers: new HttpHeaders({'Content-Type':'application/json'})
+let httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
 }
 
 @Injectable({
@@ -32,5 +32,9 @@ export class TaskService {
   toggleTask(task: Task): Observable<Task> {
     let url = `${this.API_URL}/${task.id}`;
     return this.http.put<Task>(url, task, httpOptions);
+  }
+
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.API_URL, task, httpOptions);
   }
 }
